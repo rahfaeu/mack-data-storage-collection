@@ -17,7 +17,7 @@ Entrega:
 Será avaliado cada item da entrega para compor a nota do projeto.
 
 ## 1 - Sistema funcionando
-Para executar o sistema é necessárioa ter os seguintes recursos:
+Para executar o sistema é necessárioa ter os seguintes recursos e na seção 4 temos o passo-a-passo para fazer a execução.
 
 - [WSL - Linux](https://learn.microsoft.com/pt-br/windows/wsl/about)
 - [Docker](https://docs.docker.com/get-started/docker-overview/)
@@ -71,10 +71,50 @@ A escolha por Kafka oferece maior controle, flexibilidade e escalabilidade, alé
 
 ## 4 - Manual do sistema contendo passo a passo para o desenvolvimento, explicação das ferramentas e da tecnologia utilizada
 
+Para seguir o passo-a-passo a seguir é necessário estar num ambiente Linux nativo, ou utilizando o WSL no Windows e ter o docker instalado para a criação do cluster Kafka.
 
-A aplicação funciona da seguinte forma:
+Após executar as instalações necessárias, siga o passo-a-passo:
 
+1. Clone o repositório
+```bash
+git clone https://github.com/rahfaeu/mack-data-storage-collection.git
+```
 
+2. Acesse o diretório do projeto:
+```bash
+cd mack-data-storage-collection
+```
+
+2. Acesse o diretório do projeto:
+```bash
+docker compose up -d
+```
+
+3. Execute o comando `docker ps` para visualizar os IDs dos containers criados para execução do Cluster Kafka, copie o id do container do Kafka, pois iremos utilizá-lo para criar o tópico para o envio das mensages:
+```bash
+docker ps
+
+```
+4. Crie um tópico:
+```bash
+docker exec -it <kafka-container-id> /opt/kafka/bin/kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic my-topic
+```
+Substitua <kafka-container-id> pelo ID real do contêiner Kafka (você pode encontrá-lo usando o comando docker ps).
+
+5. Execute o script `producer.py` para fazer o request de dados na API pública e enviar para o tópico criado no passo anterior:
+```bash
+python3 producer.py
+```
+
+6. Execute o script `consumer.py` para consumir as mensagens do tópico e mostrar o resultado no terminal:
+```bash
+python3 consumer.py
+```
+
+7. Alternativamente, para salvar o retorno das mensagens em arquivos JSON, Execute o script `json_data.py`:
+```bash
+python3 json_data.py
+```
 
 Utilizamos os seguintes recursos para confecção desse trabalho: Docker, Kafka e Zookeeper.
 
