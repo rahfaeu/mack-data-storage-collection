@@ -69,8 +69,10 @@ A solução utiliza Kafka para streaming de dados, junto com AWS, Docker, Zookee
 ### Conclusão
 A escolha por Kafka oferece maior controle, flexibilidade e escalabilidade, além de ser uma solução mais vantajosa em termos de retenção de dados e custos a longo prazo, especialmente para grandes volumes de dados. Event Hub simplifica a gestão, mas pode ser mais limitado em cenários complexos. Além disso, o uso de Zookeeper proporciona coordenação eficiente e alta disponibilidade em sistemas distribuídos, WSL otimiza recursos e facilita o uso de ferramentas Linux no Windows, e Docker garante portabilidade e acelera o desenvolvimento, proporcionando um ambiente mais ágil e flexível para implantação.
 
-4 - Manual do sistema contendo passo a passo para o desenvolvimento, explicação das ferramentas e da tecnologia utilizada
-5 - Apresentação em sala de aula
+## 4 - Manual do sistema contendo passo a passo para o desenvolvimento, explicação das ferramentas e da tecnologia utilizada
+
+
+## 5 - Apresentação em sala de aula
 
 
 
