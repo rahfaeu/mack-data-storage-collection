@@ -72,6 +72,23 @@ A escolha por Kafka oferece maior controle, flexibilidade e escalabilidade, alé
 ## 4 - Manual do sistema contendo passo a passo para o desenvolvimento, explicação das ferramentas e da tecnologia utilizada
 
 
+A aplicação funciona da seguinte forma:
+
+
+
+Utilizamos os seguintes recursos para confecção desse trabalho: Docker, Kafka e Zookeeper.
+
+#### 1. Docker [(Documentação do Docker)](https://docs.docker.com/): 
+Docker é um conjunto de produtos de plataforma como serviço que usam virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres. Os contêineres são isolados uns dos outros e agrupam seus próprios softwares, bibliotecas e arquivos de configuração.
+
+#### 2. Kafka [(Documentação do Kafka)](https://kafka.apache.org/20/documentation.html): 
+Apache Kafka é um armazenamento de dados distribuído otimizado para ingestão e processamento de dados de streaming em tempo real. Dados de transmissão são dados gerados continuamente por milhares de fontes de dados, que normalmente enviam os registros de dados simultaneamente. Uma plataforma de transmissão precisa lidar com esse fluxo constante de dados e processá-los de forma sequencial e incremental.
+
+#### 3. Zookeeper [(Documentação do Zookeeper)](https://zookeeper.apache.org/doc/r3.9.2/index.html):
+Zookeeper é um serviço centralizado que fornece serviços de grupo, nomeação, sincronização distribuída e mantém informações de configuração. O Apache ZooKeeper usa o Apache log4j como infraestrutura de registro
+
+
+
 ## 5 - Apresentação em sala de aula
 
 
